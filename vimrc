@@ -22,6 +22,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'd11wtq/ctrlp_bdelete.vim'
+Plugin 'scroolose/nerdtree'
 Plugin 'bogado/file-line'
 Plugin 'rking/ag.vim'
 Plugin 'PhilGrayson/php-explorer'
@@ -175,23 +176,15 @@ nmap <Leader>t <C-p>
 nmap <Leader>b :CtrlPBuffer<CR>
 " Split arguments in a function call/definition onto separate lines
 nnoremap <silent> <Leader>sp ^f(li<CR><Esc>:s/,/,\r/g<CR>f)i<CR><Esc>vib=/)<CR>==:nohlsearch<CR>
-
+"Esc mapping
+imap ii <Esc>
+imap jk <Esc>
 
 " UI / styling
 "--------------
 
 " Use 256 colours for colorschemes
 set t_Co=256
-" Use molokai colorscheme
-if (!empty(glob("~/.vim/bundle/molokai")))
-    let g:molokai_original=1
-    let g:rehash256=1
-    colorscheme molokai
-endif
-" Use luna theme rather than molokai for vim-airline
-let g:airline_theme='luna'
-" Use powerline font for nice VCS symbols for vim-airline
-let g:airline_powerline_fonts=1
 " Automatically change the screen title
 set title
 " Show line numbers
@@ -212,16 +205,6 @@ let g:indentLine_leadingSpaceChar='·'
 let g:indentLine_leadingSpaceEnabled=1
 " Set the indentation highlight colour (subtle grey against molokai background)
 let g:indentLine_color_term=237
-
-" Promptline config
-let g:promptline_theme='airline'
-let g:promptline_preset={
-    \'a': [ '%*' ],
-    \'b': [ promptline#slices#host({'only_if_ssh':1}), promptline#slices#user() ],
-    \'c': [ promptline#slices#cwd() ],
-    \'x': [ promptline#slices#vcs_branch() ],
-    \'y': [ promptline#slices#git_status() ]
-\}
 
 
 " Other

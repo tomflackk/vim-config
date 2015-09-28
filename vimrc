@@ -51,6 +51,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'c9s/phpunit.vim'
 
 
 " Git integration
